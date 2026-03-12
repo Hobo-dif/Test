@@ -11,29 +11,13 @@ background:black;
 overflow:hidden;
 }
 
-#player{
+video{
 position:fixed;
 top:0;
 left:0;
 width:100vw;
 height:100vh;
-}
-
-#overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:24px;
-font-family:sans-serif;
-background:black;
-z-index:10;
-cursor:pointer;
+object-fit:cover;
 }
 
 </style>
@@ -41,41 +25,9 @@ cursor:pointer;
 
 <body>
 
-<div id="overlay">Tap to continue</div>
-<div id="player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script>
-
-let player;
-
-function onYouTubeIframeAPIReady(){
-player = new YT.Player('player', {
-videoId: 'dQw4w9WgXcQ',
-playerVars:{
-autoplay:1,
-mute:1,
-controls:0,
-rel:0,
-loop:1,
-playlist:'dQw4w9WgXcQ',
-modestbranding:1
-}
-});
-}
-
-document.getElementById("overlay").addEventListener("click",function(){
-
-this.style.display="none";
-
-player.unMute();
-player.setVolume(100);
-player.playVideo();
-
-});
-
-</script>
+<video autoplay loop playsinline>
+<source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
+</video>
 
 </body>
 </html>
