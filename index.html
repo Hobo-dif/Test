@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body{
+margin:0;
+height:100%;
+background:black;
+overflow:hidden;
+}
+
+#player{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+}
+</style>
+</head>
+
+<body>
+
+<div id="player"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+
+function onYouTubeIframeAPIReady() {
+
+player = new YT.Player('player', {
+videoId: 'dQw4w9WgXcQ',
+playerVars: {
+autoplay: 1,
+controls: 0,
+rel: 0,
+modestbranding: 1,
+loop: 1,
+playlist: 'dQw4w9WgXcQ'
+},
+events: {
+onReady: function(e){
+e.target.playVideo();
+e.target.unMute();
+e.target.setVolume(100);
+}
+}
+});
+
+}
+
+</script>
+
+</body>
+</html>
